@@ -123,8 +123,7 @@ public class HeatSinkView extends BuildView implements ActionListener, ChangeLis
           I18N.getString("HeatSinkView.lblCritFree.tooltip"));
     private final DisplayTextField lblCritFreeCount = new DisplayTextField();
 
-    private final DisplayTextField lblWeightFreeCount = new DisplayTextField("",
-          I18N.getString("HeatSinkView.lblWeightFree.tooltip"));
+    private final DisplayTextField lblWeightFreeCount = new DisplayTextField();
     private final DisplayTextField lblTotalDissipationCount = new DisplayTextField();
     private final DisplayTextField lblMaxHeatCount = new DisplayTextField();
     private final JCheckBox chkRiscHeatSinkKit = new JCheckBox(I18N.getString("HeatSinkView.lblRiscHeatSinkKit.text")){
@@ -159,6 +158,7 @@ public class HeatSinkView extends BuildView implements ActionListener, ChangeLis
         spnBaseCount.setModel(baseCountModel);
         spnPrototypeCount.setModel(prototypeCountModel);
         lblWeightFreeCount.setHorizontalAlignment(JTextField.RIGHT);
+        lblWeightFreeCount.setToolTipText(I18N.getString("HeatSinkView.lblWeightFree.tooltip"));
         lblTotalDissipationCount.setHorizontalAlignment(JTextField.RIGHT);
         lblMaxHeatCount.setHorizontalAlignment(JTextField.RIGHT);
         chkRiscHeatSinkKit.setVisible(false);
