@@ -146,7 +146,6 @@ public class WSStructureTab extends ITab implements AdvancedAeroBuildListener, A
         leftPanel.add(iconView);
         leftPanel.add(panChassis);
         leftPanel.add(panHeat);
-        leftPanel.add(panCrew);
 
         midPanel.add(panMovement);
         panMovement.setVisible(getJumpship().hasETypeFlag(Entity.ETYPE_WARSHIP));
@@ -157,6 +156,7 @@ public class WSStructureTab extends ITab implements AdvancedAeroBuildListener, A
 
         rightPanel.add(panArmor);
         rightPanel.add(panArmorAllocation);
+        rightPanel.add(panCrew);
 
         gbc = new GridBagConstraints();
         gbc.gridx = 0;

@@ -1152,6 +1152,7 @@ public class BMStructureTab extends ITab implements MekBuildListener, ArmorAlloc
         refresh.refreshSummary();
         refresh.refreshBuild();
         refresh.refreshPreview();
+        panHeat.setFromMek(getMek());
     }
 
     @Override

@@ -135,7 +135,6 @@ public class DSStructureTab extends ITab implements DropshipBuildListener, Armor
         leftPanel.add(panInfo);
         leftPanel.add(iconView);
         leftPanel.add(panChassis);
-        leftPanel.add(panCrew);
 
         midPanel.add(panHeat);
         midPanel.add(panMovement);
@@ -145,6 +144,7 @@ public class DSStructureTab extends ITab implements DropshipBuildListener, Armor
 
         rightPanel.add(panArmor);
         rightPanel.add(panArmorAllocation);
+        rightPanel.add(panCrew);
 
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
