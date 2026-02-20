@@ -50,7 +50,6 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import com.formdev.flatlaf.FlatClientProperties;
 import megamek.client.ui.util.DisplayTextField;
 import megamek.common.battleArmor.BattleArmor;
 import megamek.common.interfaces.ITechManager;
