@@ -48,6 +48,7 @@ import megamek.common.units.Dropship;
 import megamek.common.units.Entity;
 import megamek.common.units.EntityMovementMode;
 import megamek.common.units.SmallCraft;
+import megamek.common.verifier.TestSmallCraft;
 import megamek.logging.MMLogger;
 import megameklab.ui.MegaMekLabMainUI;
 import megameklab.ui.dialog.FloatingEquipmentDatabaseDialog;
@@ -142,7 +143,8 @@ public class DSMainUI extends MegaMekLabMainUI {
             if (loc == SmallCraft.LOC_HULL) {
                 newUnit.initializeArmor(IArmorState.ARMOR_NA, loc);
             } else {
-                newUnit.initializeArmor(newUnit.getOSI(), loc);
+                int armor = TestSmallCraft.getSIBonusArmorPoints(newUnit) / (newUnit.locations() - 1);
+                newUnit.initializeArmor(armor, loc);
             }
         }
         if (null == oldUnit) {

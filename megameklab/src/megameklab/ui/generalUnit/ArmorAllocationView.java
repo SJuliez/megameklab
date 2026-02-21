@@ -234,8 +234,7 @@ public class ArmorAllocationView extends BuildView implements ArmorLocationListe
                 } else {
                     locView.setPointsRear(0);
                 }
-                if (en.hasETypeFlag(Entity.ETYPE_SMALL_CRAFT)
-                      || en.hasETypeFlag(Entity.ETYPE_JUMPSHIP)) {
+                if (en.hasETypeFlag(Entity.ETYPE_SMALL_CRAFT) || en.hasETypeFlag(Entity.ETYPE_JUMPSHIP)) {
                     locView.setMinimum((int) (TestEntity.getSIBonusArmorPoints(en) / locationViews.size()));
                 }
                 if (showPatchwork) {

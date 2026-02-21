@@ -527,15 +527,14 @@ public class DSStructureTab extends ITab implements DropshipBuildListener, Armor
     @Override
     public void autoAllocateArmor() {
         // Ignore unarmored system-wide location
-        final int ARMOR_FACINGS = getSmallCraft().locations() - 1;
-        for (int loc = 0; loc < ARMOR_FACINGS; loc++) {
+        final int armoredLocations = getSmallCraft().locations() - 1;
+        for (int loc = 0; loc < armoredLocations; loc++) {
             getSmallCraft().initializeArmor(0, loc);
         }
 
         // divide armor (in excess of bonus from SI) among positions, with more toward the front
-        int bonusPerFacing = (int) TestEntity.getSIBonusArmorPoints(getSmallCraft()) / ARMOR_FACINGS;
-        int points = TestEntity.getArmorPoints(getSmallCraft())
-              - bonusPerFacing * 4;
+        int bonusPerFacing = (int) (TestEntity.getSIBonusArmorPoints(getSmallCraft()) / armoredLocations);
+        int points = TestEntity.getArmorPoints(getSmallCraft()) - bonusPerFacing * 4;
         int nose = (int) Math.floor(points * 0.3);
         int wing = (int) Math.floor(points * 0.25);
         int aft = (int) Math.floor(points * 0.2);
