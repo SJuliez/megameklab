@@ -475,6 +475,7 @@ public class WSStructureTab extends ITab implements AdvancedAeroBuildListener, A
         getJumpship().setSail(sail);
         refresh.refreshPreview();
         refresh.refreshStatus();
+        panSummary.refresh();
     }
 
     @Override

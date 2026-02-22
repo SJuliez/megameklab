@@ -262,6 +262,7 @@ public class MVFArmorView extends BuildView implements ActionListener, ChangeLis
             spnTonnage.setToolTipText(resourceMap.getString("ArmorView.spnTonnage.tooltip"));
             spnTonnage.setModel(tonnageModel);
         }
+        cbArmorType.setEnabled(cbArmorType.getItemCount() >= 2);
 
         cbArmorType.addActionListener(this);
         spnTonnage.addChangeListener(this);
