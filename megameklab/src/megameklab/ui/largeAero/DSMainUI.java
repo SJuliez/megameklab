@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2025 The MegaMek Team. All Rights Reserved.
+ * Copyright (C) 2017-2026 The MegaMek Team. All Rights Reserved.
  *
  * This file is part of MegaMekLab.
  *
@@ -143,7 +143,13 @@ public class DSMainUI extends MegaMekLabMainUI {
             if (loc == SmallCraft.LOC_HULL) {
                 newUnit.initializeArmor(IArmorState.ARMOR_NA, loc);
             } else {
+                // It is not absolutely clear from the rules if the bonus SI armor must be applied to each face
+                // evenly or is free for the player to assign (TM p.191, SO:AA p.140, IO:AE p.125). MML treats it as
+                // if it has to be assigned evenly, but for primitive armor the value per facing must be adapted
                 int armor = TestSmallCraft.getSIBonusArmorPoints(newUnit) / (newUnit.locations() - 1);
+                if (newUnit.isPrimitive()) {
+                    armor = (int) (armor * 0.66);
+                }
                 newUnit.initializeArmor(armor, loc);
             }
         }
