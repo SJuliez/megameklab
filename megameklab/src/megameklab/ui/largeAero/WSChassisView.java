@@ -118,11 +118,11 @@ public class WSChassisView extends BuildView implements ActionListener, ChangeLi
         cbBaseType.setToolTipText(I18N.getString("AdvAeroChassisView.cbBaseType.tooltip"));
         primitiveLabel.putClientProperty(FlatClientProperties.STYLE_CLASS, "mini");
         primitiveLabel.setEnabled(false);
-        primitiveLabel.setBorder(new EmptyBorder(0, 0, 4, 0));
-        primitiveLabel.setToolTipText("IO:AE p.122");
+        primitiveLabel.setBorder(new EmptyBorder(0, 10, 4, 0));
+        primitiveLabel.setToolTipText(I18N.getString("AdvAeroChassisView.primitiveInfo.tooltip"));
         tonnageRangeLabel.putClientProperty(FlatClientProperties.STYLE_CLASS, "mini");
         tonnageRangeLabel.setEnabled(false);
-        tonnageRangeLabel.setBorder(new EmptyBorder(0, 0, 4, 0));
+        tonnageRangeLabel.setBorder(new EmptyBorder(0, 10, 4, 0));
         chkMilitary.setToolTipText(I18N.getString("AdvAeroChassisView.chkMilitary.tooltip"));
         chkLFBattery.setToolTipText(I18N.getString("AdvAeroChassisView.chkLFBattery.tooltip"));
         spnRange.setToolTipText(I18N.getString("AdvAeroChassisView.spnRange.tooltip"));

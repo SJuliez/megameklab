@@ -232,7 +232,7 @@ public class MVFArmorView extends BuildView implements ActionListener, ChangeLis
             btnMaximize.setEnabled(false);
             btnUseRemaining.setEnabled(false);
         } else {
-            cbArmorType.setEnabled(true);
+            cbArmorType.setEnabled(cbArmorType.getItemCount() >= 2);
             tonnageModel.setValue(Math.min(UnitUtil.getMaximumArmorTonnage(en),
                   en.getLabArmorTonnage()));
             tonnageModel.setMaximum(UnitUtil.getMaximumArmorTonnage(en));
@@ -262,7 +262,6 @@ public class MVFArmorView extends BuildView implements ActionListener, ChangeLis
             spnTonnage.setToolTipText(resourceMap.getString("ArmorView.spnTonnage.tooltip"));
             spnTonnage.setModel(tonnageModel);
         }
-        cbArmorType.setEnabled(cbArmorType.getItemCount() >= 2);
 
         cbArmorType.addActionListener(this);
         spnTonnage.addChangeListener(this);
