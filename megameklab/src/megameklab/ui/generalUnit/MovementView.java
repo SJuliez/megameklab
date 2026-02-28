@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2025 The MegaMek Team. All Rights Reserved.
+ * Copyright (C) 2017-2026 The MegaMek Team. All Rights Reserved.
  *
  * This file is part of MegaMekLab.
  *
@@ -47,11 +47,10 @@ import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import com.formdev.flatlaf.FlatClientProperties;
+import megamek.client.ui.util.DisplayTextField;
 import megamek.common.battleArmor.BattleArmor;
 import megamek.common.equipment.Engine;
 import megamek.common.equipment.EquipmentType;
@@ -61,6 +60,7 @@ import megamek.common.equipment.MiscType;
 import megamek.common.equipment.Mounted;
 import megamek.common.equipment.enums.MiscTypeFlag;
 import megamek.common.interfaces.ITechManager;
+import megamek.common.ui.SmallFontHelpTextLabel;
 import megamek.common.units.AeroSpaceFighter;
 import megamek.common.units.ConvFighter;
 import megamek.common.units.Entity;
@@ -114,14 +114,15 @@ public class MovementView extends BuildView implements ActionListener, ChangeLis
     private final JLabel lblJumpType = createLabel("lblJumpType", "");
 
     private final JTextField txtRunBase = new JTextField();
-    private final JTextField txtWalkFinal = new JTextField();
-    private final JTextField txtRunFinal = new JTextField();
-    private final JTextField txtJumpFinal = new JTextField();
+    private final JTextField txtWalkFinal = new DisplayTextField();
+    private final JTextField txtRunFinal = new DisplayTextField();
+    private final JTextField txtJumpFinal = new DisplayTextField();
     private final JLabel lblMekMechanicalJumpMP = new JLabel(I18N.getString("MovementView.MMJB"));
     private final SpinnerNumberModel spnMekMechanicalJumpModel = new SpinnerNumberModel(0, 0, null, 1);
     private final JSpinner spnMekMechanicalJumpMP = new JSpinner(spnMekMechanicalJumpModel);
 
-    private final JLabel wsStationKeepingInfo = new JLabel(I18N.getString("MovementView.stationKeeping"));
+    private final JLabel wsStationKeepingInfo =
+          new SmallFontHelpTextLabel(I18N.getString("MovementView.stationKeepingInfo"));
 
     private final ITechManager techManager;
     private long etype;
@@ -140,12 +141,9 @@ public class MovementView extends BuildView implements ActionListener, ChangeLis
         runNames = I18N.getString("MovementView.lblRun.values").split(",");
         jumpNames = I18N.getString("MovementView.lblJump.values").split(",");
 
-        wsStationKeepingInfo.setEnabled(false);
-        wsStationKeepingInfo.putClientProperty(FlatClientProperties.STYLE_CLASS, "mini");
-        wsStationKeepingInfo.setBorder(new EmptyBorder(0, 0, 4, 0));
-
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = STANDARD_INSETS;
 
         gbc.gridy = 0;
         add(new JLabel());
@@ -202,6 +200,7 @@ public class MovementView extends BuildView implements ActionListener, ChangeLis
         txtWalkFinal.setEditable(false);
         txtWalkFinal.setHorizontalAlignment(SwingConstants.RIGHT);
         txtRunBase.setEditable(false);
+        txtRunBase.setHorizontalAlignment(SwingConstants.RIGHT);
         txtRunFinal.setEditable(false);
         txtRunFinal.setHorizontalAlignment(SwingConstants.RIGHT);
         txtJumpFinal.setEditable(false);
